@@ -9,7 +9,7 @@ export default function Home() {
         <h1>Welcome to twiddler</h1>
       </div>
       <div>
-        <Link to="dashboard">
+        <Link to="tweeds">
           <h2>View tweeds</h2>
         </Link>
       </div>
