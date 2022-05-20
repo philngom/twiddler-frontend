@@ -4,7 +4,7 @@ const getUser = async () => {
   return client.auth.user();
 };
 
-const signInUser = async (email, password) => {
+const signIn = async (email, password) => {
   const { user, error } = await client.auth.signIn({ email, password });
 
   if (error) throw error;
@@ -12,7 +12,7 @@ const signInUser = async (email, password) => {
   return user;
 };
 
-const signInUser = async (email, password) => {
+const signUp = async (email, password) => {
   const { user, error } = await client.auth.signUp({ email, password });
 
   if (error) throw error;
@@ -20,6 +20,6 @@ const signInUser = async (email, password) => {
   return user;
 };
 
-const signInUser = async (email, password) => {
+const signOut = async (email, password) => {
   return client.auth.signOut();
 };
