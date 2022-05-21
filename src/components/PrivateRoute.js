@@ -1,4 +1,4 @@
-import { useLocation, Route, Redirect } from 'react';
+import { useLocation, Route, Redirect } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 
 export default function PrivateRoute({ children, ...rest }) {
