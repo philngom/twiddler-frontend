@@ -9,17 +9,15 @@ import { TweedProvider } from './context/TweedProvider.js';
 export default function App() {
   return (
     <Switch>
+      <PrivateRoute path="/tweeds">
+        <Tweeds />
+      </PrivateRoute>
+      <PrivateRoute path="/my-tweeds">
+        <Tweeds />
+      </PrivateRoute>
       <Route path="/login">
         <Login />
       </Route>
-      <TweedProvider>
-        <PrivateRoute path="/tweeds">
-          <Tweeds />
-        </PrivateRoute>
-        <PrivateRoute path="/my-tweeds">
-          <Tweeds />
-        </PrivateRoute>
-      </TweedProvider>
       <Route path="/">
         <main>
           <Home />
