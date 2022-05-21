@@ -1,4 +1,4 @@
-import { useContext, createContext, setUser } from 'react';
+import { useContext, createContext, useState } from 'react';
 import { getUser, signIn, signUp, signOut } from '../services/user.js';
 
 export const UserContext = createContext();
