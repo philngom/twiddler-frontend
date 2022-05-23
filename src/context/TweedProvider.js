@@ -9,7 +9,9 @@ const TweedContext = createContext();
 export const TweedProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return <TweedContext.Provider value={{}}>{children}</TweedContext.Provider>;
+  return (
+    <TweedContext.Provider value={{ state }}>{children}</TweedContext.Provider>
+  );
 };
 
 export const useTweed = () => {
@@ -18,4 +20,6 @@ export const useTweed = () => {
   if (!context) {
     throw new Error('useTweed must be used from with a TweedProvider');
   }
+
+  return context;
 };

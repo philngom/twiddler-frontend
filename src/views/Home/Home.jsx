@@ -13,11 +13,6 @@ export default function Home() {
           <h2>View tweeds</h2>
         </Link>
       </div>
-      <div>
-        <Link to="my-tweeds">
-          <h2>View my tweeds</h2>
-        </Link>
-      </div>
     </div>
   );
 }
