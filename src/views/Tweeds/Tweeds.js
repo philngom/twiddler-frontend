@@ -5,8 +5,6 @@ import { useTweed } from '../../context/TweedProvider';
 export default function Tweeds() {
   const { state } = useTweed();
 
-  const handleAddTweed = () => {};
-
   return (
     <>
       <Link to="/tweed">Add Tweed</Link>
