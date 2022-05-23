@@ -1,16 +1,28 @@
-import { createContext, useContext, useReducer } from 'react';
-import { addItem } from '../services/tweeds';
-
-const initialState = [];
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useState,
+} from 'react';
+import { addItem, fetchAllTweeds } from '../services/tweeds';
 
 const reducer = async (state, action) => {
   switch (action.type) {
     case 'ADD':
       const tweed = await addItem(action.payload.tweed);
       console.log(tweed);
-      return [];
+      return [...state, tweed];
+    case 'GET':
+      const tweeds = await fetchAllTweeds();
+      console.log(tweed);
+      return [tweeds];
+    default:
+      throw Error('Error in reducer');
   }
 };
+
+const initialState = [];
 
 const TweedContext = createContext();
 
@@ -21,8 +33,13 @@ export const TweedProvider = ({ children }) => {
     dispatch({ type: 'ADD', payload: { tweed } });
   };
 
+  const getTweeds = () => {
+    console.log('in here');
+    dispatch({ type: 'GET' });
+  };
+
   return (
-    <TweedContext.Provider value={{ state, addTweed }}>
+    <TweedContext.Provider value={{ state, addTweed, getTweeds }}>
       {children}
     </TweedContext.Provider>
   );

@@ -10,7 +10,7 @@ export default function Tweed() {
   const handleAddTweed = async (e) => {
     e.preventDefault();
     await addTweed(content);
-    history.push('/tweeds');
+    // history.push('/tweeds');
   };
 
   return (
